@@ -1,0 +1,10 @@
+.logInComponent {
+    position: absolute;
+    right: 40%;
+    bottom: 50%;
+    font-family: Helvetica;
+}
+
+.PleaseSignIn {
+    margin-top: -20px;
+}

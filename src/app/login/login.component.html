@@ -1,0 +1,18 @@
+<div class="logInComponent">
+<h1>Hello!</h1>
+<h3 class="PleaseSignIn">Please Sign In</h3>
+<form>
+  <label for="email"></label>
+  <input type="text" placeholder="Email" required [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+  <br>
+  <label for="password"></label>
+  <input type = "text" placeholder="Password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}">
+  <br>
+  <label for="remeberMe">
+    Remember Me
+    <input type = "checkbox">
+  </label>
+  <br>
+  <button (click)="validateLogin()">Submit</button>
+</form>
+</div>
