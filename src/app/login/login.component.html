@@ -1,18 +1,24 @@
-<div class="logInComponent">
-<h1>Hello!</h1>
-<h3 class="PleaseSignIn">Please Sign In</h3>
-<form>
-  <label for="email"></label>
-  <input type="text" placeholder="Email" required [(ngModel)]="user.email" [ngModelOptions]="{standalone:true}">
+<mat-card class="signInCard">
+  <mat-card-header class="header">
+    <mat-card-title class="hello">Hello!</mat-card-title>
+    <mat-card-subtitle style="font-weight: lighter">Please Sign In</mat-card-subtitle>
+  </mat-card-header>
+  <form class="signInForm">
+    <mat-form-field>
+      <input matInput placeholder="Email" [formControl]="emailFormControl" [(ngModel)]="user.email">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address.
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is required.
+      </mat-error> 
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  </form>
   <br>
-  <label for="password"></label>
-  <input type = "text" placeholder="Password" required [(ngModel)]="user.password" [ngModelOptions]="{standalone:true}">
+  <button mat-raised-button (click)="validateLogin()" class="submitButton">Sign In</button>
   <br>
-  <label for="remeberMe">
-    Remember Me
-    <input type = "checkbox">
-  </label>
-  <br>
-  <button (click)="validateLogin()">Submit</button>
-</form>
-</div>
+  <a (click)="openRegisterModal()" class="registerLink">Don't have an account? Register here!</a>
+</mat-card>

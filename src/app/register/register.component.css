@@ -1,0 +1,11 @@
+.registerModal {
+    height: 50vh;
+    width: 40vh;
+    text-align: center;
+}
+
+.buttons {
+    position: absoulte;
+    justify-content: center;
+    margin-top: 15px;
+}

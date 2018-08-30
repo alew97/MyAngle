@@ -1,0 +1,14 @@
+<h2 mat-dialog-title>Add New Post</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <textarea matInput placeholder="Title" [(ngModel)]="post.title"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="post.description"></textarea>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="closeModal()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="addPost()">Add Post</button>
+</mat-dialog-actions>

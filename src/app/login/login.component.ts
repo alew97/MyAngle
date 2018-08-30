@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../login.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +14,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
   public user: User;
 
-  constructor(private loginService: LoginService, private router: Router) { 
+  constructor(private loginService: LoginService, private router: Router, private dialog: MatDialog) { 
     this.user = new User();
   }
 
@@ -38,4 +46,12 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  openRegisterModal() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(RegisterComponent, dialogConfig);
+  }
 }

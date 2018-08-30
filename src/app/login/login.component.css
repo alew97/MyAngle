@@ -1,10 +1,40 @@
-.logInComponent {
-    position: absolute;
-    right: 40%;
+.signInCard {
+    position: fixed;
+    left: 50%;
     bottom: 50%;
-    font-family: Helvetica;
+    transform: translate(-50%, 50%);
+    font-family: Arial;
+    height: 50vh;
+    width: 50vh;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.PleaseSignIn {
-    margin-top: -20px;
+.header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.hello {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.signInForm {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.submitButton {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.registerLink {
+    font-weight: lighter;
+    font-size: 11px;
+    color: blue;
+    cursor: pointer;
 }
