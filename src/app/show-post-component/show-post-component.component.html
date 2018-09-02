@@ -1,10 +1,19 @@
-<div class="list-group">
-    <a *ngFor="let post of posts" href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{post.title}}</h5>
-            <small>3 days ago</small>
-        </div>
-        <p class="mb-1">{{post.description}}</p>
-        <small>read more...</small>
-    </a>
-</div>
+<mat-card class="containingCard">
+<mat-card-header>All Posts</mat-card-header>
+<br>
+<mat-card-content>
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let post of posts">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{post.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{post.description}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        {{post.content}}
+    </mat-expansion-panel>
+</mat-accordion>
+</mat-card-content>
+</mat-card>

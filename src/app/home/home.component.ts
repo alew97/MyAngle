@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { MatDialog, MatDialogConfig, MatCardModule, MatButtonModule } from '@angular/material';
 
 import { AddPostComponent } from '../add-post/add-post.component';
 

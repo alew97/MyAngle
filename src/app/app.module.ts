@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatFormFieldModule } from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
 
 import { RootComponent } from './root/root.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -15,6 +18,7 @@ import { ShowPostComponentComponent } from './show-post-component/show-post-comp
 import { AddPostComponent } from './add-post/add-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
+import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     ShowPostComponentComponent,
     AddPostComponent,
-    RegisterComponent
+    RegisterComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,12 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatExpansionModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [RootComponent],

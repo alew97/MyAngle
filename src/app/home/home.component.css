@@ -1,0 +1,17 @@
+.topNavBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navButtons {
+    right: 0;
+}
+
+.addMargin {
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    width: 50%;
+}
