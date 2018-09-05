@@ -18,7 +18,6 @@ import { ShowPostComponentComponent } from './show-post-component/show-post-comp
 import { AddPostComponent } from './add-post/add-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     HomeComponent,
     ShowPostComponentComponent,
     AddPostComponent,
-    RegisterComponent,
-    SideNavComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
