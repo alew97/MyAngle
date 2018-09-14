@@ -15,7 +15,7 @@ export class RootComponent implements OnInit {
   constructor(private router: Router, private fullscreenService: FullscreenService) { }
 
   ngOnInit() {
-    this.fullscreen$ = this.fullscreenService.fullscreen$;
+    //this.fullscreen$ = this.fullscreenService.fullscreen$;
   }
 
   logOut() {

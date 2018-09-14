@@ -1,4 +1,4 @@
-.topNavBar {
+/* .topNavBar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -14,4 +14,26 @@
     bottom: 50%;
     transform: translate(-50%, 50%);
     width: 50%;
+} */
+
+.sideNav {
+    min-width: 35vh;
+    width: 35vh;
+    max-width: 35vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.toolbar-filler {
+    flex: 1 1 auto;
+}
+
+.main-toolbar {
+    position: fixed;
+    top: 0;
+}
+
+.toolbar-title {
+    margin-left: 600px;
 }

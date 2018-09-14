@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.loginService.validateLogin(this.user).subscribe(result => {
         console.log('result is', result);
         if (result['status'] === 'success') {
-          this.router.navigate(['/home'])
+          this.router.navigate(['home'])
         } else {
           alert('wrong user name and password')
         }

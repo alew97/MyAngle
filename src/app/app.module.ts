@@ -8,9 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-
 import { RootComponent } from './root/root.component';
-import { AppRoutingModule } from './/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
@@ -18,6 +16,14 @@ import { ShowPostComponentComponent } from './show-post-component/show-post-comp
 import { AddPostComponent } from './add-post/add-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: '', component: LoginComponent, pathMatch: 'full'},
+  {path: 'home', component: HomeComponent, children: [
+    {path: 'allPosts', component: ShowPostComponentComponent, pathMatch: 'full'}
+  ]}
+];
 
 @NgModule({
   declarations: [
@@ -29,9 +35,9 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
     HttpClientModule,
     MatDialogModule,
     BrowserAnimationsModule,
@@ -46,6 +52,7 @@ import { RegisterComponent } from './register/register.component';
     MatIconModule,
     MatListModule
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [RootComponent],
   entryComponents: [
