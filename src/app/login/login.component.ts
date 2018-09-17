@@ -28,11 +28,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  isLoggedIn() {
+    return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
   validateLogin() {
     if (this.user.email && this.user.password) {
       this.loginService.validateLogin(this.user).subscribe(result => {
         console.log('result is', result);
         if (result['status'] === 'success') {
+          localStorage.setItem('isLoggedIn', 'true');
           this.router.navigate(['home'])
         } else {
           alert('wrong user name and password')

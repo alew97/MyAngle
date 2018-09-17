@@ -22,7 +22,16 @@ export class HomeComponent implements OnInit {
   }
 
   logOut() {
+    localStorage.removeItem('isLoggedIn');
     this.router.navigate([''])
+  }
+
+  goHome() {
+    this.router.navigate(['home'])
+  }
+  
+  viewAllPosts() {
+    this.router.navigate(['allPosts'])
   }
 
   openModal() {

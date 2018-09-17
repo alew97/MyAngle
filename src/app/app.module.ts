@@ -17,11 +17,13 @@ import { AddPostComponent } from './add-post/add-post.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth-guard.guard';
 
 const routes: Routes = [
   {path: '', component: LoginComponent, pathMatch: 'full'},
-  {path: 'home', component: HomeComponent, children: [
-    {path: 'allPosts', component: ShowPostComponentComponent, pathMatch: 'full'}
+  {path: 'home', canActivate: [AuthGuard], component: HomeComponent, children: [
+    {path: 'allPosts', canActivate: [AuthGuard],component: ShowPostComponentComponent},
+    {path: 'home', canActivate: [AuthGuard], component: HomeComponent}
   ]}
 ];
 
@@ -53,7 +55,7 @@ const routes: Routes = [
     MatListModule
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [RootComponent],
   entryComponents: [
     AddPostComponent,
