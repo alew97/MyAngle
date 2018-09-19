@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
     this.fullscreen$ = this.fullscreenService.fullscreen$;
+    this.router.navigate(['home/allPosts'])
   }
 
   logOut() {
@@ -31,7 +32,7 @@ export class HomeComponent implements OnInit {
   }
   
   viewAllPosts() {
-    this.router.navigate(['allPosts'])
+    this.router.navigate(['home/allPosts'])
   }
 
   openModal() {

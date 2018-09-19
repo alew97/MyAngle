@@ -7,8 +7,8 @@
             </button>
         </mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item (click) = "goHome()" (click)="sidenav.toggle()">Home</a>
-            <a mat-list-item (click) = "viewAllPosts()" (click)="sidenav.toggle()">View All Posts</a>
+            <a mat-list-item (click)="goHome()" (click)="sidenav.toggle()">Home</a>
+            <a mat-list-item (click)="viewAllPosts()" (click)="sidenav.toggle()">View All Posts</a>
         </mat-nav-list>
     </mat-sidenav>
         <mat-toolbar color="primary" class="main-toolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}">
