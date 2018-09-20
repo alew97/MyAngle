@@ -18,12 +18,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard.guard';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent, pathMatch: 'full'},
   {path: 'home', canActivate: [AuthGuard], component: HomeComponent, children: [
     {path: 'allPosts', canActivate: [AuthGuard],component: ShowPostComponentComponent},
-    {path: 'home', canActivate: [AuthGuard], component: HomeComponent}
+    {path: 'home', canActivate: [AuthGuard], component: HomeComponent},
+    {path: 'frontPage', canActivate: [AuthGuard], component: FrontPageComponent}
   ]}
 ];
 
@@ -34,7 +36,8 @@ const routes: Routes = [
     HomeComponent,
     ShowPostComponentComponent,
     AddPostComponent,
-    RegisterComponent
+    RegisterComponent,
+    FrontPageComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig, MatCardModule, MatButtonModule } from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 
 import { AddPostComponent } from '../add-post/add-post.component';
 import { Observable } from 'rxjs';
@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
     this.fullscreen$ = this.fullscreenService.fullscreen$;
-    this.router.navigate(['home/allPosts'])
+    this.router.navigate(['home/frontPage'])
   }
 
   logOut() {
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   goHome() {
-    this.router.navigate(['home'])
+    this.router.navigate(['home/frontPage'])
   }
   
   viewAllPosts() {
