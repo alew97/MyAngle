@@ -7,4 +7,9 @@
     <mat-card-subtitle class="subtitle">this is my blog where i talk about the things i learned</mat-card-subtitle>
   </mat-card-header>
 </mat-card>
+<mat-grid-list cols="2" rowHeight="500px" class="grid-list" gutterSize="30px">
+  <mat-grid-tile *ngFor="let post of posts" [style.background]="'lightblue'">
+    <app-blog-tile [post]=post></app-blog-tile>
+  </mat-grid-tile>
+</mat-grid-list>
 </div>

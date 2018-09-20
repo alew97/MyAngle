@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatDialogModule, MatFormFieldModule, MatToolbarModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatDialogModule, MatFormFieldModule, MatToolbarModule, MatIconModule, MatListModule, MatGridListModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -19,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard.guard';
 import { FrontPageComponent } from './front-page/front-page.component';
+import { BlogTileComponent } from './blog-tile/blog-tile.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent, pathMatch: 'full'},
@@ -37,7 +38,8 @@ const routes: Routes = [
     ShowPostComponentComponent,
     AddPostComponent,
     RegisterComponent,
-    FrontPageComponent
+    FrontPageComponent,
+    BlogTileComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -55,7 +57,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   exports:[RouterModule],
   providers: [AuthGuard],
